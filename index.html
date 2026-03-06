@@ -4,18 +4,16 @@
   <meta charset="UTF-8" />
   <title>ScaleOps — Operations & Strategy for Startups</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="ScaleOps helps Seed–Series B startups install a modern operating system in 60–90 days so teams can scale without chaos and raise with confidence." />
+  <meta name="description" content="ScaleOps helps Seed–Series B startups build a modern operating system in 60–90 days so teams can scale without chaos and raise with confidence." />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <style>
     :root {
-      --bg: #f5f5f7;
-      --bg-elevated: #ffffff;
+      --bg: #f5f5f5;
+      --surface: #ffffff;
       --ink-strong: #0f172a;
-      --ink-subtle: #6b7280;
+      --ink-muted: #6b7280;
       --accent: #2563eb;
       --accent-soft: #e0edff;
-      --accent-emerald: #059669;
-      --radius-xl: 26px;
     }
     html, body {
       margin: 0;
@@ -27,570 +25,226 @@
     .shell {
       max-width: 1120px;
       margin: 0 auto;
-      padding-left: 1.25rem;
-      padding-right: 1.25rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    .nav-shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
     }
     .card {
-      background: var(--bg-elevated);
-      border-radius: 22px;
-      border: 1px solid rgba(15, 23, 42, 0.04);
+      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid rgba(148, 163, 184, 0.25);
       box-shadow: 0 18px 45px rgba(15, 23, 42, 0.04);
-    }
-    header.card {
-      backdrop-filter: blur(18px);
-      border-radius: 999px;
-      box-shadow: 0 18px 60px rgba(15, 23, 42, 0.06);
     }
     .fade-in {
       opacity: 0;
       transform: translateY(14px);
-      transition: opacity 0.45s ease, transform 0.45s ease;
+      transition: opacity 0.4s ease, transform 0.4s ease;
     }
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    .pill-toggle {
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      padding: 3px;
-      background: rgba(255, 255, 255, 0.85);
+    .link-underline {
+      position: relative;
+      display: inline-block;
     }
-    .pill-toggle button {
-      border-radius: 999px;
-      padding: 6px 14px;
-      font-size: 11px;
-      letter-spacing: 0.02em;
+    .link-underline::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      transition: width 0.25s ease;
     }
-    .pill-toggle button.active {
-      background: #0f172a;
-      color: #ffffff;
-    }
-    .metric-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--accent);
+    .link-underline:hover::after {
+      width: 100%;
     }
   </style>
 </head>
 <body class="font-sans antialiased">
 
   <!-- NAV -->
-  <header class="w-full sticky top-0 z-40 mt-3">
-    <div class="shell">
-      <div class="card flex items-center justify-between px-4 py-2.5">
-        <div class="flex items-center space-x-2">
-          <!-- Simple but intentional logotype -->
-          <div class="h-8 w-8 rounded-full border border-blue-500/60 flex items-center justify-center">
-            <span class="text-xs font-semibold text-blue-600 tracking-tight">SO</span>
-          </div>
-          <div class="flex flex-col leading-tight">
-            <span class="text-sm font-semibold tracking-tight text-slate-900">ScaleOps</span>
-            <span class="text-[10px] text-slate-500">Operations for Seed–Series B</span>
-          </div>
-        </div>
-        <nav class="hidden md:flex items-center space-x-6 text-xs text-slate-600">
-          <a href="#pain" class="hover:text-slate-900">Pain</a>
-          <a href="#services" class="hover:text-slate-900">Services</a>
-          <a href="#process" class="hover:text-slate-900">Process</a>
-          <a href="#results" class="hover:text-slate-900">Results</a>
-          <a href="#about" class="hover:text-slate-900">About</a>
-          <a href="#faq" class="hover:text-slate-900">FAQ</a>
-        </nav>
-        <a href="#cta"
-           class="hidden md:inline-flex items-center px-4 py-1.5 rounded-full text-xs font-medium text-white bg-slate-900 hover:bg-slate-800 transition">
-          Book Ops Diagnostic
-        </a>
+  <header class="sticky top-0 z-40 bg-[rgba(245,245,245,0.92)] backdrop-blur border-b border-gray-200/70">
+    <div class="nav-shell flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <!-- Simple wordmark, no fake icon -->
+        <span class="text-sm font-semibold tracking-tight text-gray-900">ScaleOps</span>
+        <span class="hidden sm:inline text-[11px] text-gray-500">Operations for Seed–Series B startups</span>
       </div>
+      <nav class="hidden md:flex items-center space-x-6 text-xs text-gray-600">
+        <a href="#services" class="link-underline">Services</a>
+        <a href="#results" class="link-underline">Results</a>
+        <a href="#about" class="link-underline">About</a>
+        <a href="#faq" class="link-underline">FAQ</a>
+      </nav>
+      <a href="#cta"
+         class="hidden md:inline-flex items-center px-4 py-1.5 rounded-full bg-gray-900 text-white text-xs font-medium hover:bg-gray-800 transition">
+        Book Ops Diagnostic
+      </a>
     </div>
   </header>
 
-  <main class="pt-10 pb-16">
+  <main class="pb-16">
 
     <!-- HERO -->
-    <section class="shell mt-10 fade-in">
-      <div class="grid lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] gap-10 items-center">
+    <section class="shell pt-14 pb-10 fade-in">
+      <div class="grid lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] gap-10 items-center">
         <div class="space-y-5">
-          <p class="inline-flex items-center text-[10px] font-semibold tracking-[0.18em] uppercase text-blue-600 bg-blue-50 rounded-full px-2 py-1">
-            <span class="metric-dot mr-1.5"></span> Operations & Strategy for Startups
-          </p>
-          <h1 class="text-3xl sm:text-[2.4rem] leading-tight font-semibold text-slate-900">
-            Install a modern operating system in your startup in <span class="text-blue-600">60–90 days</span>.
+          <p class="text-[11px] font-semibold tracking-[0.2em] uppercase text-gray-500">Operations & Strategy</p>
+          <h1 class="text-3xl sm:text-[2.5rem] leading-tight font-semibold text-gray-900">
+            A modern operating system for your startup — in <span class="text-blue-600">60–90 days</span>.
           </h1>
-          <p class="text-sm sm:text-base text-slate-600 max-w-xl">
-            I help Seed–Series B founders turn chaotic execution into a calm, measurable operating rhythm —
-            without hiring a full-time COO.
+          <p class="text-sm sm:text-base text-gray-700 max-w-xl">
+            I partner with Seed–Series B founders to move from founder‑centred chaos to a calm, measurable operating rhythm —
+            without hiring a full‑time COO.
           </p>
           <div class="flex flex-col sm:flex-row gap-3 pt-2">
             <a href="#cta"
-               class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-slate-900 text-xs sm:text-sm font-medium text-white hover:bg-slate-800 transition">
+               class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-gray-900 text-white text-xs sm:text-sm font-medium hover:bg-gray-800 transition">
               Book your free 45‑minute Ops Diagnostic
             </a>
-            <button class="inline-flex items-center text-[11px] text-slate-500">
+            <button class="inline-flex items-center text-[11px] text-gray-500">
               <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span>
-              Kickoff usually within 7 days
+              Kickoff typically within 7 days
             </button>
           </div>
-          <div class="flex flex-wrap gap-4 pt-3 text-[11px] text-slate-500">
-            <div class="flex items-center space-x-2">
-              <div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
-              <span>Hands‑on implementation, not slide decks</span>
-            </div>
-            <div class="flex items-center space-x-2">
-              <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
-              <span>Seed–Series B B2B SaaS, AI/ML, FinTech, HealthTech</span>
-            </div>
+          <div class="flex flex-wrap gap-4 pt-3 text-[11px] text-gray-500">
+            <span>Seed–Series B · B2B SaaS, AI/ML, FinTech, HealthTech</span>
+            <span>Based in Madrid · Remote across Europe</span>
           </div>
         </div>
 
-        <!-- Hero visual: product‑style card, not dashboard -->
-        <div class="card px-4 py-4 sm:px-5 sm:py-5 relative overflow-hidden">
-          <div class="absolute -right-12 -top-16 w-44 h-44 bg-blue-100 rounded-full mix-blend-multiply opacity-70"></div>
-          <div class="absolute -left-10 -bottom-20 w-40 h-40 bg-emerald-100 rounded-full mix-blend-multiply opacity-70"></div>
-
-          <div class="relative space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="text-[11px] font-medium text-slate-700">Ops Snapshot</span>
-              <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
-                90 days after kickoff
+        <!-- Hero side: simple “before / after” not a fake dashboard -->
+        <div class="space-y-4">
+          <div class="card p-4">
+            <div class="flex items-center justify-between mb-2">
+              <p class="text-[11px] text-gray-500 uppercase tracking-wide">Before</p>
+              <span class="text-[11px] text-gray-400">Typical Seed / Series A</span>
+            </div>
+            <ul class="text-[12px] text-gray-600 space-y-1.5">
+              <li>• CRM half‑used, forecasts are gut‑feel</li>
+              <li>• No SOPs or handovers — everything lives in the founder’s head</li>
+              <li>• Board asks questions you cannot answer confidently</li>
+            </ul>
+          </div>
+          <div class="card p-4 border-blue-200/70">
+            <div class="flex items-center justify-between mb-2">
+              <p class="text-[11px] text-blue-600 uppercase tracking-wide">After 90 days</p>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
+                ScaleOps OS
               </span>
             </div>
-
-            <!-- Three key metrics -->
-            <div class="grid grid-cols-3 gap-3 text-[11px]">
-              <div class="rounded-xl bg-slate-50 border border-slate-100 px-3 py-2">
-                <p class="text-slate-500">Forecast accuracy</p>
-                <p class="text-lg font-semibold text-slate-900">±5%</p>
-              </div>
-              <div class="rounded-xl bg-slate-50 border border-slate-100 px-3 py-2">
-                <p class="text-slate-500">Ops meetings</p>
-                <p class="text-lg font-semibold text-slate-900">60 min/wk</p>
-              </div>
-              <div class="rounded-xl bg-slate-50 border border-slate-100 px-3 py-2">
-                <p class="text-slate-500">SOP coverage</p>
-                <p class="text-lg font-semibold text-slate-900">20+ areas</p>
-              </div>
-            </div>
-
-            <!-- Operating cadence diagram -->
-            <div class="mt-2 rounded-2xl bg-white border border-slate-100 p-3 text-[11px] space-y-3">
-              <p class="text-slate-500 mb-1">Operating rhythm</p>
-              <div class="flex items-center justify-between">
-                <span class="rounded-full px-2 py-1 bg-slate-900 text-white text-[10px]">Weekly</span>
-                <span class="h-px flex-1 mx-2 bg-slate-200"></span>
-                <span class="rounded-full px-2 py-1 bg-slate-100 text-slate-700 text-[10px]">Monthly</span>
-                <span class="h-px flex-1 mx-2 bg-slate-200"></span>
-                <span class="rounded-full px-2 py-1 bg-slate-100 text-slate-700 text-[10px]">Quarterly</span>
-              </div>
-              <p class="text-slate-500">
-                From ad‑hoc firefighting to a clear, calm review cadence.
-              </p>
-            </div>
+            <ul class="text-[12px] text-gray-700 space-y-1.5">
+              <li>• Clean CRM, reliable revenue forecasting</li>
+              <li>• SOPs across sales, CS, marketing and admin</li>
+              <li>• Weekly / monthly operating rhythm and board‑ready reporting</li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- PAIN -->
-    <section id="pain" class="shell mt-16 fade-in">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
-        <div>
-          <p class="text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-500 mb-1">Is this you?</p>
-          <h2 class="text-xl sm:text-2xl font-semibold text-slate-900">
-            Product-market fit, funding… and operational chaos.
-          </h2>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-4 text-sm">
-        <article class="card p-4 space-y-2">
-          <p class="text-slate-900 font-medium text-sm">Flying blind</p>
-          <p class="text-slate-600 text-[13px]">
-            CRM is messy, forecasts are gut‑feel, and board meetings feel like guesswork.
-          </p>
-        </article>
-        <article class="card p-4 space-y-2">
-          <p class="text-slate-900 font-medium text-sm">Everything in your head</p>
-          <p class="text-slate-600 text-[13px]">
-            No SOPs, no handovers, no repeatability. If you step away, things break.
-          </p>
-        </article>
-        <article class="card p-4 space-y-2">
-          <p class="text-slate-900 font-medium text-sm">Growing fires</p>
-          <p class="text-slate-600 text-[13px]">
-            New hires join but structure lags behind. Revenue grows, so do bottlenecks and churn.
-          </p>
-        </article>
       </div>
     </section>
 
     <!-- SERVICES -->
-    <section id="services" class="shell mt-18 fade-in">
+    <section id="services" class="shell pt-6 pb-10 fade-in">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
         <div>
-          <p class="text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-500 mb-1">Services</p>
-          <h2 class="text-xl sm:text-2xl font-semibold text-slate-900">
-            From quick diagnostic to embedded leadership.
+          <p class="text-[11px] font-semibold tracking-[0.2em] uppercase text-gray-500">Services</p>
+          <h2 class="text-xl sm:text-2xl font-semibold text-gray-900">
+            Three ways to work together.
           </h2>
-          <p class="text-[13px] text-slate-600 max-w-xl mt-1">
-            You choose the level of involvement that matches your stage, budget, and urgency.
+          <p class="text-[13px] text-gray-600 max-w-xl mt-1">
+            From a focused diagnostic to ongoing leadership. You choose the level of involvement that fits your stage and budget.
           </p>
-        </div>
-        <!-- Stage selector with functionality -->
-        <div class="pill-toggle flex items-center space-x-1 text-[11px]">
-          <button class="stage-pill active" data-stage="seed">Seed</button>
-          <button class="stage-pill" data-stage="series-a">Series A</button>
-          <button class="stage-pill" data-stage="series-b">Series B</button>
         </div>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-5 text-sm">
-        <article class="card p-4 sm:p-5 flex flex-col justify-between service-card" data-stages="seed,series-a">
+      <div class="grid md:grid-cols-3 gap-5 text-[13px]">
+        <article class="card p-4 flex flex-col justify-between">
           <div class="space-y-2">
-            <div class="flex items-center justify-between">
-              <h3 class="text-sm font-semibold text-slate-900">
-                Ops Diagnostic
-              </h3>
-              <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-50 text-slate-700 border border-slate-200">
-                2–4 weeks
-              </span>
-            </div>
-            <p class="text-[13px] text-slate-600">
-              Map where your operating system is breaking and get a clear, prioritized 90‑day plan.
+            <h3 class="text-sm font-semibold text-gray-900">1. Ops Diagnostic</h3>
+            <p class="text-gray-600">
+              2–3 weeks to map where your operations are breaking and what to fix first.
             </p>
-            <ul class="space-y-1 text-[12px] text-slate-600">
-              <li>Deep review of processes, tools, metrics, org.</li>
-              <li>Single‑page maturity map and top 3 interventions.</li>
-              <li>Quick‑wins implemented during the engagement.</li>
+            <ul class="space-y-1 text-gray-600 text-[12px]">
+              <li>• Deep review of processes, tools, metrics and org</li>
+              <li>• Single‑page maturity map and top 3 priorities</li>
+              <li>• Quick‑wins implemented during the diagnostic</li>
             </ul>
           </div>
-          <div class="pt-3 text-[12px] flex items-center justify-between">
-            <span class="text-slate-500">Best for Seed and early Series A.</span>
-            <a href="#cta" class="text-blue-600 hover:text-blue-500 font-medium">Start here →</a>
-          </div>
+          <p class="pt-3 text-[12px] text-gray-500">
+            Best starting point for Seed and early Series A.
+          </p>
         </article>
 
-        <article class="card p-4 sm:p-5 flex flex-col justify-between service-card" data-stages="seed,series-a,series-b">
+        <article class="card p-4 flex flex-col justify-between">
           <div class="space-y-2">
-            <div class="flex items-center justify-between">
-              <h3 class="text-sm font-semibold text-slate-900">
-                Scale‑Up Operating System
-              </h3>
-              <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
-                8–12 weeks
-              </span>
-            </div>
-            <p class="text-[13px] text-slate-600">
-              Turn your company into a system: SOPs, dashboards, forecasting, and an operating rhythm your team can run.
+            <h3 class="text-sm font-semibold text-gray-900">2. Scale‑Up Operating System</h3>
+            <p class="text-gray-600">
+              8–12 weeks to install a lean, stage‑appropriate operating system.
             </p>
-            <ul class="space-y-1 text-[12px] text-slate-600">
-              <li>SOP library across sales, CS, marketing, admin.</li>
-              <li>Clean CRM, pipeline visibility, forecasting model.</li>
-              <li>Weekly / monthly / quarterly review cadence.</li>
+            <ul class="space-y-1 text-gray-600 text-[12px]">
+              <li>• SOP library across sales, CS, marketing, admin</li>
+              <li>• Clean CRM, pipeline visibility, forecasting model</li>
+              <li>• Weekly / monthly / quarterly operating cadence</li>
             </ul>
           </div>
-          <div class="pt-3 text-[12px] flex items-center justify-between">
-            <span class="text-slate-500">Flagship for post‑raise Series A.</span>
-            <a href="#cta" class="text-blue-600 hover:text-blue-500 font-medium">Discuss scope →</a>
-          </div>
+          <p class="pt-3 text-[12px] text-gray-500">
+            Ideal for post‑raise Series A preparing for the next round.
+          </p>
         </article>
 
-        <article class="card p-4 sm:p-5 flex flex-col justify-between service-card" data-stages="series-a,series-b">
+        <article class="card p-4 flex flex-col justify-between">
           <div class="space-y-2">
-            <div class="flex items-center justify-between">
-              <h3 class="text-sm font-semibold text-slate-900">
-                Fractional COO / Head of Ops
-              </h3>
-              <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
-                3–6 months
-              </span>
-            </div>
-            <p class="text-[13px] text-slate-600">
-              Senior operator in your leadership team 1–3 days / week to own metrics, governance, and hiring.
+            <h3 class="text-sm font-semibold text-gray-900">3. Fractional COO</h3>
+            <p class="text-gray-600">
+              3–6 month embedded engagement, 1–3 days / week in your leadership team.
             </p>
-            <ul class="space-y-1 text-[12px] text-slate-600">
-              <li>Owns ops KPIs and reporting to the board.</li>
-              <li>Runs leadership ceremonies and OKR planning.</li>
-              <li>Helps hire / onboard your internal ops team.</li>
+            <ul class="space-y-1 text-gray-600 text-[12px]">
+              <li>• Owns ops KPIs, reporting and governance</li>
+              <li>• Runs leadership ceremonies and OKRs</li>
+              <li>• Helps hire / onboard the internal ops team</li>
             </ul>
           </div>
-          <div class="pt-3 text-[12px] flex items-center justify-between">
-            <span class="text-slate-500">Bridge until a full‑time COO hire.</span>
-            <a href="#cta" class="text-blue-600 hover:text-blue-500 font-medium">Explore availability →</a>
-          </div>
+          <p class="pt-3 text-[12px] text-gray-500">
+            Bridge solution until you hire a full‑time COO or Head of Ops.
+          </p>
         </article>
-
-        <article class="card p-4 sm:p-5 flex flex-col justify-between service-card" data-stages="seed,series-a,series-b">
-          <div class="space-y-2">
-            <div class="flex items-center justify-between">
-              <h3 class="text-sm font-semibold text-slate-900">
-                Custom transformation
-              </h3>
-              <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-50 text-slate-700 border border-slate-200">
-                Tailored scope
-              </span>
-            </div>
-            <p class="text-[13px] text-slate-600">
-              Multi‑team restructuring, fundraising readiness, or a specific ops area like RevOps or CS.
-            </p>
-            <ul class="space-y-1 text-[12px] text-slate-600">
-              <li>Clear outcomes, timeline, and pricing.</li>
-              <li>Can combine diagnostic, OS, and fractional work.</li>
-              <li>Designed around your board and funding milestones.</li>
-            </ul>
-          </div>
-          <div class="pt-3 text-[12px] flex items-center justify-between">
-            <span class="text-slate-500">For complex or hybrid situations.</span>
-            <a href="#cta" class="text-blue-600 hover:text-blue-500 font-medium">Design together →</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section id="process" class="shell mt-18 fade-in">
-      <p class="text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-500 mb-1">Process</p>
-      <h2 class="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">
-        A simple 4‑step path from chaos to operating system.
-      </h2>
-
-      <div class="grid md:grid-cols-4 gap-4 text-[12px] sm:text-[13px]">
-        <div class="card p-4 space-y-2">
-          <p class="text-[11px] text-slate-500 uppercase tracking-wide">01 — Diagnose</p>
-          <p class="font-medium text-slate-900">Free Ops Diagnostic</p>
-          <p class="text-slate-600">
-            45‑minute call. We map your funnel, tools, reporting, and unblockers. You leave with a 1‑page summary and top 3 priorities.
-          </p>
-        </div>
-        <div class="card p-4 space-y-2">
-          <p class="text-[11px] text-slate-500 uppercase tracking-wide">02 — Design</p>
-          <p class="font-medium text-slate-900">Stage‑appropriate OS</p>
-          <p class="text-slate-600">
-            Deep dive into processes, metrics, team structure. I design a lean operating system anchored in your next funding or hiring milestone.
-          </p>
-        </div>
-        <div class="card p-4 space-y-2">
-          <p class="text-[11px] text-slate-500 uppercase tracking-wide">03 — Install</p>
-          <p class="font-medium text-slate-900">Hands‑on build</p>
-          <p class="text-slate-600">
-            We install SOPs, dashboards, cadences, and governance — in your tools, with your team, not in a slide deck.
-          </p>
-        </div>
-        <div class="card p-4 space-y-2">
-          <p class="text-[11px] text-slate-500 uppercase tracking-wide">04 — Handover</p>
-          <p class="font-medium text-slate-900">Train & transition</p>
-          <p class="text-slate-600">
-            We iterate on real data, train owners, and hand over a system your team can run without me.
-          </p>
-        </div>
       </div>
     </section>
 
     <!-- RESULTS -->
-    <section id="results" class="shell mt-18 fade-in">
+    <section id="results" class="shell pt-4 pb-10 fade-in">
       <div class="grid lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] gap-8 items-start">
         <div>
-          <p class="text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-500 mb-1">Case glimpse</p>
-          <h2 class="text-xl sm:text-2xl font-semibold text-slate-900 mb-3">
-            From founder‑bottlenecked to board‑ready in under 90 days.
+          <p class="text-[11px] font-semibold tracking-[0.2em] uppercase text-gray-500">Example</p>
+          <h2 class="text-xl sm:text-2xl font-semibold text-gray-900 mb-3">
+            From founder bottleneck to board‑ready in under 90 days.
           </h2>
           <div class="card p-5 text-[13px] space-y-3">
-            <p class="text-slate-700">
+            <p class="text-gray-700">
               A Seed‑stage AI startup (~€150K ARR, 8 people) ran everything through the founder.
-              CRM was chaotic, invoicing manual, and pipeline visibility close to zero.
+              CRM was messy, invoicing manual, and pipeline visibility almost zero.
             </p>
-            <p class="text-slate-700">
-              In 90 days we installed a lean operating system: clean CRM, automated invoicing, SOPs across sales / CS / marketing,
+            <p class="text-gray-700">
+              In 90 days we installed a lean operating system: clean CRM, automated billing, SOPs across sales / CS / marketing,
               and a forecasting model the CEO now uses with the board.
             </p>
           </div>
         </div>
         <div class="grid sm:grid-cols-2 gap-4 text-center text-[13px]">
           <div class="card py-4 px-3">
-            <p class="text-[11px] text-slate-500 mb-1">Time to operating system</p>
-            <p class="text-2xl font-semibold text-slate-900">60–90 days</p>
+            <p class="text-[11px] text-gray-500 mb-1">Time to operating system</p>
+            <p class="text-2xl font-semibold text-gray-900">60–90 days</p>
           </div>
           <div class="card py-4 px-3">
-            <p class="text-[11px] text-slate-500 mb-1">Reduction in invoicing time</p>
-            <p class="text-2xl font-semibold text-slate-900">50–70%</p>
+            <p class="text-[11px] text-gray-500 mb-1">Reduction in invoicing time</p>
+            <p class="text-2xl font-semibold text-gray-900">50–70%</p>
           </div>
           <div class="card py-4 px-3">
-            <p class="text-[11px] text-slate-500 mb-1">Pipeline visibility</p>
-            <p class="text-2xl font-semibold text-slate-900">2–3× clearer</p>
-          </div>
-          <div class="card py-4 px-3">
-            <p class="text-[11px] text-slate-500 mb-1">SOPs created & adopted</p>
-            <p class="text-2xl font-semibold text-slate-900">20+ areas</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="shell mt-18 fade-in">
-      <div class="grid lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.9fr)] gap-8 items-start">
-        <div>
-          <p class="text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-500 mb-1">About</p>
-          <h2 class="text-xl sm:text-2xl font-semibold text-slate-900 mb-3">
-            Operator first, consultant second.
-          </h2>
-          <div class="card p-5 text-[13px] space-y-3">
-            <p class="text-slate-700">
-              I was the first operations hire at a Seed‑stage AI startup. Nothing was documented,
-              the CRM was a mess, and every decision flowed through the founder.
-            </p>
-            <p class="text-slate-700">
-              I built CRM visibility from scratch, defined SOPs for sales, marketing and customer success,
-              integrated billing systems, and created the forecasting model still used for investor reporting.
-            </p>
-            <p class="text-slate-700">
-              Now I help other founders do the same — faster, with proven patterns, and without the cost or ramp‑up of a full‑time C‑level hire.
-            </p>
-          </div>
-        </div>
-        <div class="card p-5 text-[12px] space-y-3">
-          <p class="text-[11px] font-semibold tracking-[0.18em] uppercase text-slate-500">Who I work with</p>
-          <ul class="space-y-1 text-slate-700">
-            <li>Seed–Series B startups with a product and revenue.</li>
-            <li>B2B SaaS, AI/ML, FinTech, HealthTech.</li>
-            <li>Teams of roughly 5–80 people.</li>
-          </ul>
-          <p class="text-[11px] font-semibold tracking-[0.18em] uppercase text-slate-500 pt-3">Not a fit if</p>
-          <ul class="space-y-1 text-slate-700">
-            <li>Pre‑product or pre‑funding.</li>
-            <li>Lifestyle business or non‑tech SME.</li>
-            <li>>150 people — you likely need full‑time leaders.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="shell mt-18 fade-in">
-      <p class="text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-500 mb-1">FAQ</p>
-      <h2 class="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">
-        Clear answers before you book.
-      </h2>
-      <div class="space-y-2 text-[13px]">
-        <details class="card px-4 py-3">
-          <summary class="cursor-pointer font-medium text-slate-900 text-sm">
-            How is this different from hiring a full‑time COO?
-          </summary>
-          <p class="mt-2 text-slate-700 text-[12px]">
-            You get similar ownership and decision‑making, but without a €100K+ salary, equity package, or 3–6 month search.
-            I typically work 1–3 days per week, own processes and metrics, and help you hire the internal team that will eventually replace me.
-          </p>
-        </details>
-
-        <details class="card px-4 py-3">
-          <summary class="cursor-pointer font-medium text-slate-900 text-sm">
-            Which startups do you work with?
-          </summary>
-          <p class="mt-2 text-slate-700 text-[12px]">
-            Seed–Series B, usually B2B SaaS, AI/ML, FinTech, or HealthTech. You have a product and funding, but no real operating system.
-            If you are pre‑product or lifestyle‑oriented, I am probably not the right fit.
-          </p>
-        </details>
-
-        <details class="card px-4 py-3">
-          <summary class="cursor-pointer font-medium text-slate-900 text-sm">
-            Do you work remotely or on‑site?
-          </summary>
-          <p class="mt-2 text-slate-700 text-[12px]">
-            Most work is remote with clear cadences and async comms. For Madrid‑based clients,
-            I am happy to run key workshops and kickoffs on‑site.
-          </p>
-        </details>
-
-        <details class="card px-4 py-3">
-          <summary class="cursor-pointer font-medium text-slate-900 text-sm">
-            What happens in the free Ops Diagnostic?
-          </summary>
-          <p class="mt-2 text-slate-700 text-[12px]">
-            We map funnel, tools, reporting and ops debt in 45 minutes. You receive a simple one‑pager with current maturity
-            and top 3 moves. No commitment, no hard sell.
-          </p>
-        </details>
-
-        <details class="card px-4 py-3">
-          <summary class="cursor-pointer font-medium text-slate-900 text-sm">
-            How quickly can we start?
-          </summary>
-          <p class="mt-2 text-slate-700 text-[12px]">
-            Once we agree on scope, I can usually start within 1 week. Most projects show tangible change in the first 10 days —
-            not after a big reveal deck.
-          </p>
-        </details>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section id="cta" class="shell mt-18 fade-in">
-      <div class="card px-5 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-          <p class="text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-500 mb-1">
-            Next step
-          </p>
-          <h2 class="text-xl font-semibold text-slate-900 mb-1">
-            Book a free Ops Diagnostic.
-          </h2>
-          <p class="text-[13px] text-slate-700 max-w-xl">
-            45 minutes to understand your stage, map the biggest operational gaps, and leave with a concrete plan —
-            whether we work together or not.
-          </p>
-        </div>
-        <div class="space-y-2 text-[12px]">
-          <!-- Replace # with Calendly / booking link -->
-          <a href="#"
-             class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition">
-            Book your free call
-          </a>
-          <p class="text-slate-500">
-            Prefer email? Write to <a href="mailto:hello@scaleops.co" class="text-blue-600 underline">hello@scaleops.co</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="mt-10 border-t border-slate-200">
-    <div class="shell py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between text-[11px] text-slate-500 gap-2">
-      <p>© <span id="year"></span> ScaleOps — Operations & Strategy for Startups. Madrid, Spain.</p>
-      <p>Autónomo details / legal imprint coming soon.</p>
-    </div>
-  </footer>
-
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Scroll-in
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('visible');
-      });
-    }, { threshold: 0.16 });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Stage pills logic (emphasize relevant cards)
-    const stagePills = document.querySelectorAll('.stage-pill');
-    const serviceCards = document.querySelectorAll('.service-card');
-
-    stagePills.forEach(pill => {
-      pill.addEventListener('click', () => {
-        const stage = pill.dataset.stage;
-        stagePills.forEach(p => p.classList.toggle('active', p === pill));
-
-        serviceCards.forEach(card => {
-          const stages = card.dataset.stages.split(',');
-          const match = stages.includes(stage);
-          card.style.opacity = match ? '1' : '0.4';
-          card.style.transform = match ? 'scale(1)' : 'scale(0.98)';
-        });
-      });
-    });
-  </script>
-</body>
-</html>
+            <p class="tex
