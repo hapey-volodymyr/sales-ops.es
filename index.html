@@ -1,218 +1,835 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>ScaleOps – Operations & Strategy for Startups</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="I help Seed-to-Series B startups install operational systems in 60 to 90 days, so you can grow faster, raise with confidence, and stop firefighting." />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #050816;
-      --surface: #020617;
-      --ink: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #38bdf8;
-    }
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: radial-gradient(circle at top, #1e293b 0, #020617 60%);
-      color: var(--ink);
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    .shell {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-    .card {
-      border-radius: 22px;
-      background: rgba(15, 23, 42, 0.96);
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      box-shadow: 0 24px 70px rgba(15, 23, 42, 0.7);
-    }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.45s ease, transform 0.45s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .link-underline {
-      position: relative;
-      display: inline-block;
-    }
-    .link-underline::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 0;
-      height: 1px;
-      background: currentColor;
-      transition: width 0.25s ease;
-    }
-    .link-underline:hover::after {
-      width: 100%;
-    }
-  </style>
+<!-- saved from url=(1599)https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&Expires=1772718302&utm_source=perplexity -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScaleOps - Operations &amp; Strategy for Startups</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./ScaleOps - Operations &amp; Strategy for Startups_files/css2" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0F1A2E;
+            --dark: #1a1a2e;
+            --slate: #2d3748;
+            --gray: #64748b;
+            --light-gray: #94a3b8;
+            --off-white: #f8fafc;
+            --white: #ffffff;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+            --accent-soft: #eff6ff;
+            --teal: #0d9488;
+            --teal-soft: #f0fdfa;
+            --border: #e2e8f0;
+            --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.04), 0 2px 4px rgba(0,0,0,0.03);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.06), 0 4px 10px rgba(0,0,0,0.04);
+            --radius: 12px;
+            --radius-lg: 20px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--slate);
+            line-height: 1.7;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+        .serif { font-family: 'Instrument Serif', serif; }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto;
+            padding: 16px 24px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .nav-logo-img {
+            height: 48px; mix-blend-mode: multiply;
+        }
+        .logo {
+            font-weight: 700; font-size: 1.35rem; color: var(--navy);
+            text-decoration: none; letter-spacing: -0.5px;
+        }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a {
+            text-decoration: none; color: var(--gray); font-size: 0.9rem;
+            font-weight: 500; transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--navy); }
+        .lang-toggle {
+            display: flex; gap: 4px; background: var(--off-white);
+            border-radius: 8px; padding: 3px;
+        }
+        .lang-btn {
+            padding: 4px 10px; border-radius: 6px; border: none;
+            background: transparent; cursor: pointer; font-size: 0.8rem;
+            font-weight: 600; color: var(--gray); transition: all 0.2s;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .lang-btn.active { background: var(--white); color: var(--navy); box-shadow: var(--shadow); }
+        .btn-nav {
+            background: var(--navy); color: var(--white); padding: 10px 22px;
+            border-radius: 8px; text-decoration: none; font-size: 0.88rem;
+            font-weight: 600; transition: all 0.2s; border: none; cursor: pointer;
+        }
+        .btn-nav:hover { background: var(--accent); transform: translateY(-1px); }
+
+        /* HERO */
+        .hero {
+            padding: 160px 24px 100px;
+            max-width: 1200px; margin: 0 auto;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-block; padding: 6px 16px;
+            background: var(--accent-soft); color: var(--accent);
+            border-radius: 100px; font-size: 0.82rem; font-weight: 600;
+            margin-bottom: 28px; letter-spacing: 0.3px;
+        }
+        .hero h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+            line-height: 1.12;
+            color: var(--navy);
+            max-width: 820px; margin: 0 auto 24px;
+            font-weight: 400;
+        }
+        .hero h1 em { font-style: italic; color: var(--accent); }
+        .hero p.hero-desc {
+            font-size: 1.15rem; color: var(--gray);
+            max-width: 600px; margin: 0 auto 40px;
+            line-height: 1.75;
+        }
+        .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary {
+            background: var(--navy); color: var(--white); padding: 14px 32px;
+            border-radius: 10px; text-decoration: none; font-size: 1rem;
+            font-weight: 600; transition: all 0.25s; display: inline-flex;
+            align-items: center; gap: 8px; border: none; cursor: pointer;
+        }
+        .btn-primary:hover { background: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-secondary {
+            background: transparent; color: var(--slate); padding: 14px 32px;
+            border-radius: 10px; text-decoration: none; font-size: 1rem;
+            font-weight: 600; transition: all 0.25s; display: inline-flex;
+            align-items: center; gap: 8px; border: 1.5px solid var(--border); cursor: pointer;
+        }
+        .btn-secondary:hover { border-color: var(--navy); color: var(--navy); }
+        .hero-stats {
+            display: flex; justify-content: center; gap: 64px;
+            margin-top: 72px; padding-top: 48px;
+            border-top: 1px solid var(--border);
+        }
+        .hero-stat h3 { font-size: 2rem; color: var(--navy); font-weight: 700; letter-spacing: -1px; }
+        .hero-stat p { font-size: 0.85rem; color: var(--gray); margin-top: 4px; }
+
+        /* SECTIONS */
+        section { padding: 100px 24px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-label {
+            font-size: 0.8rem; font-weight: 700; letter-spacing: 1.5px;
+            text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            color: var(--navy); line-height: 1.2;
+            max-width: 600px; font-weight: 400;
+        }
+        .section-subtitle {
+            font-size: 1.05rem; color: var(--gray);
+            max-width: 550px; margin-top: 16px; line-height: 1.7;
+        }
+        .section-header { margin-bottom: 56px; }
+
+        /* PROBLEMS */
+        .problems { background: var(--off-white); }
+        .problems-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .problem-card {
+            background: var(--white); border-radius: var(--radius);
+            padding: 32px; border: 1px solid var(--border);
+            transition: all 0.25s;
+        }
+        .problem-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+        .problem-icon {
+            width: 48px; height: 48px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem; margin-bottom: 20px;
+        }
+        .problem-card h3 { font-size: 1.05rem; color: var(--navy); margin-bottom: 10px; font-weight: 600; }
+        .problem-card p { font-size: 0.92rem; color: var(--gray); line-height: 1.65; }
+
+        /* SERVICES */
+        .services-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+        .service-card {
+            border: 1.5px solid var(--border); border-radius: var(--radius-lg);
+            padding: 40px 36px; position: relative; transition: all 0.25s;
+            background: var(--white);
+        }
+        .service-card:hover { border-color: var(--accent); box-shadow: var(--shadow-lg); }
+        .service-card.featured { border-color: var(--accent); background: var(--navy); color: var(--white); }
+        .service-card.featured h3,
+        .service-card.featured .service-price { color: var(--white); }
+        .service-card.featured p,
+        .service-card.featured li { color: #cbd5e1; }
+        .service-card.featured .service-badge { background: var(--accent); color: var(--white); }
+        .service-badge {
+            display: inline-block; padding: 4px 12px;
+            background: var(--accent-soft); color: var(--accent);
+            border-radius: 6px; font-size: 0.75rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px;
+        }
+        .service-card h3 { font-size: 1.35rem; color: var(--navy); margin-bottom: 8px; font-weight: 700; }
+        .service-card > p { font-size: 0.92rem; color: var(--gray); margin-bottom: 24px; }
+        .service-price { font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 24px; }
+        .service-price span { font-size: 0.9rem; font-weight: 400; color: var(--gray); }
+        .service-card ul { list-style: none; margin-bottom: 28px; }
+        .service-card li {
+            padding: 6px 0; font-size: 0.9rem; color: var(--slate);
+            display: flex; align-items: flex-start; gap: 10px;
+        }
+        .service-card li::before { content: "\2713"; color: var(--teal); font-weight: 700; flex-shrink: 0; }
+        .service-card.featured li::before { color: var(--accent-light); }
+        .service-card .btn-primary { width: 100%; justify-content: center; }
+        .service-card.featured .btn-primary { background: var(--accent); }
+        .service-card.featured .btn-primary:hover { background: var(--accent-light); }
+        .custom-box {
+            margin-top: 32px; padding: 28px 32px; border-radius: var(--radius);
+            border: 1.5px dashed var(--border); background: var(--off-white);
+            display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+        }
+        .custom-box-text { flex: 1; min-width: 280px; }
+        .custom-box-text h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: 6px; font-weight: 600; }
+        .custom-box-text p { font-size: 0.9rem; color: var(--gray); line-height: 1.65; }
+        .custom-box .btn-primary { flex-shrink: 0; padding: 12px 28px; font-size: 0.92rem; }
+
+        /* PROCESS */
+        .process { background: var(--off-white); }
+        .process-steps {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 0; position: relative;
+        }
+        .process-step { text-align: center; padding: 32px 24px; position: relative; }
+        .step-num {
+            width: 52px; height: 52px; border-radius: 50%;
+            background: var(--navy); color: var(--white);
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; font-weight: 700; margin-bottom: 20px;
+        }
+        .process-step h3 { font-size: 1.05rem; color: var(--navy); margin-bottom: 8px; font-weight: 600; }
+        .process-step p { font-size: 0.88rem; color: var(--gray); line-height: 1.6; }
+
+        /* CASE STUDY */
+        .case-study-card {
+            background: var(--navy); border-radius: var(--radius-lg);
+            padding: 56px; display: grid; grid-template-columns: 1fr 1fr;
+            gap: 56px; align-items: center;
+        }
+        .case-study-card h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.8rem; color: var(--white); margin-bottom: 16px; font-weight: 400;
+        }
+        .case-study-card p { color: #94a3b8; font-size: 0.95rem; line-height: 1.75; margin-bottom: 20px; }
+        .case-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .case-metric {
+            background: rgba(255,255,255,0.06); border-radius: var(--radius);
+            padding: 24px; text-align: center;
+        }
+        .case-metric h4 { font-size: 1.8rem; color: var(--accent-light); font-weight: 700; }
+        .case-metric p { color: #94a3b8; font-size: 0.82rem; margin-top: 4px; }
+
+        /* ABOUT */
+        .about { background: var(--off-white); }
+        .about-grid {
+            display: grid; grid-template-columns: 1fr 1.3fr; gap: 64px; align-items: center;
+        }
+        .about-photo {
+            width: 100%; aspect-ratio: 4/5; background: var(--border);
+            border-radius: var(--radius-lg); display: flex;
+            align-items: center; justify-content: center; color: var(--gray);
+            font-size: 0.9rem;
+        }
+        .about-content h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2rem; color: var(--navy); margin-bottom: 20px; font-weight: 400;
+        }
+        .about-content p { margin-bottom: 16px; color: var(--slate); font-size: 0.95rem; }
+        .about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+        .about-tag {
+            padding: 6px 14px; background: var(--white); border: 1px solid var(--border);
+            border-radius: 100px; font-size: 0.82rem; color: var(--slate); font-weight: 500;
+        }
+
+        /* FAQ */
+        .faq { background: var(--off-white); }
+        .faq-grid { max-width: 720px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; }
+        .faq-q {
+            display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; background: none; border: none; width: 100%;
+            text-align: left; font-family: 'DM Sans', sans-serif;
+            font-size: 1.02rem; font-weight: 600; color: var(--navy);
+            padding: 0; line-height: 1.5;
+        }
+        .faq-q::after { content: "+"; font-size: 1.4rem; color: var(--gray); transition: transform 0.2s; flex-shrink: 0; margin-left: 16px; }
+        .faq-q.active::after { content: "\2212"; }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-a p { padding-top: 12px; font-size: 0.92rem; color: var(--gray); line-height: 1.7; }
+
+        /* CTA */
+        .cta-section { background: var(--navy); text-align: center; }
+        .cta-section h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--white); margin-bottom: 16px; font-weight: 400;
+        }
+        .cta-section p { color: #94a3b8; font-size: 1.05rem; margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .cta-section .btn-primary { background: var(--accent); font-size: 1.05rem; padding: 16px 40px; }
+        .cta-section .btn-primary:hover { background: var(--accent-light); }
+
+        /* FOOTER */
+        footer { padding: 56px 24px 32px; border-top: 1px solid var(--border); }
+        .footer-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 24px;
+        }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { text-decoration: none; color: var(--gray); font-size: 0.88rem; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--navy); }
+        .footer-copy { font-size: 0.82rem; color: var(--light-gray); }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-stats { flex-direction: column; gap: 24px; }
+            .process-steps { grid-template-columns: 1fr 1fr; gap: 24px; }
+            .case-study-card { grid-template-columns: 1fr; padding: 36px; }
+            .about-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            section { padding: 64px 20px; }
+            .hero { padding: 140px 20px 64px; }
+            .nav-logo-img { height: 40px; }
+            .custom-box { flex-direction: column; text-align: center; }
+        }
+
+        /* ANIMATIONS */
+        .fade-in {
+            opacity: 0; transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
 </head>
-<body class="antialiased">
+<body>
 
-  <!-- NAV -->
-  <header class="sticky top-0 z-40 bg-slate-950/80 backdrop-blur border-b border-slate-800/70">
-    <div class="shell flex items-center justify-between py-3">
-      <div class="flex items-center space-x-2">
-        <span class="text-sm font-semibold tracking-tight text-slate-50">ScaleOps</span>
-        <span class="hidden sm:inline text-[11px] text-slate-400">Operations &amp; Strategy for Startups</span>
-      </div>
-      <nav class="hidden md:flex items-center space-x-6 text-xs text-slate-300">
-        <a href="#pain" class="link-underline">Pain</a>
-        <a href="#services" class="link-underline">Services</a>
-        <a href="#process" class="link-underline">How it works</a>
-        <a href="#results" class="link-underline">Results</a>
-        <a href="#about" class="link-underline">About</a>
-        <a href="#faq" class="link-underline">FAQ</a>
-      </nav>
-      <a href="https://calendly.com/hapey-volodymyr/30min"
-         target="_blank" rel="noopener"
-         class="hidden md:inline-flex items-center px-4 py-1.5 rounded-full bg-sky-400 text-slate-950 text-xs font-medium hover:bg-sky-300 transition">
-        Book Ops Diagnostic
-      </a>
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#" class="logo"><img src="./ScaleOps - Operations &amp; Strategy for Startups_files/419bc9bf-cf9b-4cc5-9f47-84f5309b2961.png" alt="ScaleOps" class="nav-logo-img"></a>
+        <div class="nav-links">
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#services" data-lang="en" style="">Services</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#services" data-lang="es" style="display: none;">Servicios</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#process" data-lang="en" style="">Process</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#process" data-lang="es" style="display: none;">Proceso</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#results" data-lang="en" style="">Results</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#results" data-lang="es" style="display: none;">Resultados</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#about" data-lang="en" style="">About</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#about" data-lang="es" style="display: none;">Sobre mi</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#faq">FAQ</a>
+            <div class="lang-toggle">
+                <button class="lang-btn active" onclick="switchLang(&#39;en&#39;)">EN</button>
+                <button class="lang-btn" onclick="switchLang(&#39;es&#39;)">ES</button>
+            </div>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#contact" class="btn-nav" data-lang="en" style="">Book a Free Call</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#contact" class="btn-nav" data-lang="es" style="display: none;">Reserva una Llamada</a>
+        </div>
     </div>
-  </header>
+</nav>
 
-  <main class="pb-16">
-
-    <!-- HERO -->
-    <section class="shell pt-14 pb-10 fade-in">
-      <div class="grid lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] gap-10 items-center">
-        <div class="space-y-5">
-          <p class="text-[11px] font-semibold tracking-[0.2em] uppercase text-sky-300">Operations &amp; Strategy</p>
-          <h1 class="text-3xl sm:text-[2.6rem] leading-tight font-semibold text-slate-50">
-            I install an operating system in your startup in <span class="text-sky-300">60–90 days</span>.
-          </h1>
-          <p class="text-sm sm:text-base text-slate-300 max-w-xl">
-            I help Seed-to-Series B startups install operational systems, so you can grow faster, raise with confidence, and stop firefighting.
-          </p>
-          <ul class="space-y-1 text-[13px] text-slate-300">
-            <li class="flex items-center space-x-2">
-              <span class="h-1 w-4 rounded-full bg-emerald-400"></span>
-              <span>Days to a working operating system, not a strategy deck.</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="h-1 w-4 rounded-full bg-sky-400"></span>
-              <span>Stage-specific frameworks for Seed–Series B.</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="h-1 w-4 rounded-full bg-purple-400"></span>
-              <span>Hands-on implementation embedded with your team.</span>
-            </li>
-          </ul>
-          <div class="flex flex-col sm:flex-row gap-3 pt-3">
-            <a href="https://calendly.com/hapey-volodymyr/30min"
-               target="_blank" rel="noopener"
-               class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-sky-400 text-slate-950 text-xs sm:text-sm font-medium hover:bg-sky-300 transition">
-              Book your free 1‑hour Ops Diagnostic
-            </a>
-            <button class="inline-flex items-center text-[11px] text-slate-400">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
-              Typically kicks off within 7 days
-            </button>
-          </div>
-          <div class="flex flex-wrap gap-4 pt-3 text-[11px] text-slate-400">
-            <span>B2B SaaS · AI/ML · HealthTech · FinTech</span>
-            <span>Seed to Series B · 5–80 people</span>
-          </div>
+<!-- HERO -->
+<section class="hero">
+    <div data-lang="en" style="">
+        <div class="hero-badge">Operations &amp; Strategy for Startups</div>
+        <h1>Your startup raised funding.<br>Now build the <em>engine</em> to scale it.</h1>
+        <p class="hero-desc">I help Seed-to-Series B startups install operational systems in 60 to 90 days, so you can grow faster, raise with confidence, and stop firefighting.</p>
+        <div class="hero-ctas">
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#contact" class="btn-primary">Book a Free Ops Diagnostic →</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#services" class="btn-secondary">See How It Works</a>
         </div>
-
-        <!-- Keep your existing right-hand hero visual here if you have one -->
-        <!-- ... -->
-      </div>
-    </section>
-
-    <!-- PAIN -->
-    <section id="pain" class="shell pt-6 pb-10 fade-in">
-      <!-- your existing “Sound familiar?” / pain content goes here unchanged -->
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="shell pt-6 pb-10 fade-in">
-      <!-- your full current Services markup goes here unchanged
-           if you have any buttons like <a href="#cta">Book...,
-           you can leave them as-is or change href to Calendly in GitHub later -->
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section id="process" class="shell pt-6 pb-10 fade-in">
-      <!-- your existing “How It Works” steps content -->
-    </section>
-
-    <!-- RESULTS -->
-    <section id="results" class="shell pt-6 pb-10 fade-in">
-      <!-- your existing Results / case study content -->
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="shell pt-6 pb-10 fade-in">
-      <!-- your existing About content -->
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="shell pt-6 pb-10 fade-in">
-      <!-- your existing FAQ content -->
-    </section>
-
-    <!-- CTA -->
-    <section id="cta" class="shell pt-6 pb-10 fade-in">
-      <div class="card px-5 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-          <p class="text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-400 mb-1">Next step</p>
-          <h2 class="text-xl font-semibold text-slate-50 mb-1">
-            Book a free Ops Diagnostic.
-          </h2>
-          <p class="text-[13px] text-slate-300 max-w-xl">
-            Book a free 1-hour Ops Diagnostic. No commitment, no slide decks — just a clear picture of where you are and what to fix first.
-          </p>
-        </div>
-        <div class="space-y-2 text-[12px]">
-          <a href="https://calendly.com/hapey-volodymyr/30min"
-             target="_blank" rel="noopener"
-             class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-sky-400 text-slate-950 text-sm font-medium hover:bg-sky-300 transition">
-            Book Your Free Call →
-          </a>
-          <p class="text-slate-400">
-            Or email me at <a href="mailto:hello@scaleops.co" class="link-underline text-slate-100">hello@scaleops.co</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="border-t border-slate-800">
-    <div class="shell py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between text-[11px] text-slate-500 gap-2">
-      <p>© <span id="year"></span> ScaleOps — Operations &amp; Strategy for Startups. Madrid, Spain.</p>
-      <p>Autónomo details / legal imprint coming soon.</p>
     </div>
-  </footer>
+    <div data-lang="es" style="display: none;">
+        <div class="hero-badge">Operaciones y Estrategia para Startups</div>
+        <h1>Tu startup ha levantado ronda.<br>Ahora construye el <em>motor</em> para escalar.</h1>
+        <p class="hero-desc">Ayudo a startups desde Seed hasta Serie B a instalar sistemas operativos en 60 a 90 dias, para que crezcas mas rapido, levantes con confianza y dejes de apagar fuegos.</p>
+        <div class="hero-ctas">
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#contact" class="btn-primary">Reserva un Diagnostico Gratis →</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#services" class="btn-secondary">Ver Como Funciona</a>
+        </div>
+    </div>
+    <div class="hero-stats">
+        <div class="hero-stat">
+            <h3>60-90</h3>
+            <p data-lang="en" style="">Days to a working operating system</p>
+            <p data-lang="es" style="display: none;">Dias hasta un sistema operativo funcional</p>
+        </div>
+        <div class="hero-stat">
+            <h3>Seed-B</h3>
+            <p data-lang="en" style="">Stage-specific frameworks</p>
+            <p data-lang="es" style="display: none;">Frameworks adaptados por etapa</p>
+        </div>
+        <div class="hero-stat">
+            <h3>100%</h3>
+            <p data-lang="en" style="">Implementation, not slide decks</p>
+            <p data-lang="es" style="display: none;">Implementacion, no presentaciones</p>
+        </div>
+    </div>
+</section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+<!-- PROBLEMS -->
+<section class="problems" id="problems">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-label" data-lang="en" style="">Sound Familiar?</p>
+            <p class="section-label" data-lang="es" style="display: none;">Te Suena?</p>
+            <h2 class="section-title" data-lang="en" style="">The growing pains every funded startup faces</h2>
+            <h2 class="section-title" data-lang="es" style="display: none;">Los dolores de crecimiento que toda startup financiada enfrenta</h2>
+            <p class="section-subtitle" data-lang="en" style="">You have product-market fit and funding. But scaling without an operational backbone leads to chaos, churn, and burned capital.</p>
+            <p class="section-subtitle" data-lang="es" style="display: none;">Tienes product-market fit y financiacion. Pero escalar sin una columna vertebral operativa lleva al caos, la rotacion y quemar capital.</p>
+        </div>
+        <div class="problems-grid">
+            <div class="problem-card fade-in visible">
+                <div class="problem-icon" style="background:var(--accent-soft);">📈</div>
+                <h3 data-lang="en" style="">No metrics, no visibility</h3>
+                <h3 data-lang="es" style="display: none;">Sin metricas, sin visibilidad</h3>
+                <p data-lang="en" style="">Your CRM is a mess. You cannot forecast revenue. Board meetings feel like guesswork.</p>
+                <p data-lang="es" style="display: none;">Tu CRM es un desastre. No puedes predecir ingresos. Las reuniones de board son adivinanzas.</p>
+            </div>
+            <div class="problem-card fade-in visible">
+                <div class="problem-icon" style="background:var(--teal-soft);">⚙</div>
+                <h3 data-lang="en" style="">Everything depends on the founder</h3>
+                <h3 data-lang="es" style="display: none;">Todo depende del fundador</h3>
+                <p data-lang="en" style="">No SOPs, no handovers, no repeatable processes. If you step away, things break.</p>
+                <p data-lang="es" style="display: none;">Sin SOPs, sin traspasos, sin procesos repetibles. Si te alejas, todo se rompe.</p>
+            </div>
+            <div class="problem-card fade-in visible">
+                <div class="problem-icon" style="background:#fef3c7;">🔥</div>
+                <h3 data-lang="en" style="">Scaling creates chaos</h3>
+                <h3 data-lang="es" style="display: none;">Escalar crea caos</h3>
+                <p data-lang="en" style="">New hires but no structure. Teams misaligned. Growing revenue but also growing fires.</p>
+                <p data-lang="es" style="display: none;">Nuevas contrataciones pero sin estructura. Equipos desalineados. Mas ingresos pero tambien mas fuegos.</p>
+            </div>
+            <div class="problem-card fade-in visible">
+                <div class="problem-icon" style="background:#fce7f3;">💰</div>
+                <h3 data-lang="en" style="">Not ready for the next round</h3>
+                <h3 data-lang="es" style="display: none;">No estas listo para la siguiente ronda</h3>
+                <p data-lang="en" style="">Investors want governance, unit economics, and operational maturity. You are not there yet.</p>
+                <p data-lang="es" style="display: none;">Los inversores quieren governance, unit economics y madurez operativa. Aun no estas ahi.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('visible');
-      });
-    }, { threshold: 0.16 });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  </script>
+<!-- SERVICES -->
+<section id="services">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-label" data-lang="en" style="">Services</p>
+            <p class="section-label" data-lang="es" style="display: none;">Servicios</p>
+            <h2 class="section-title" data-lang="en" style="">Three ways to work together</h2>
+            <h2 class="section-title" data-lang="es" style="display: none;">Tres formas de trabajar juntos</h2>
+            <p class="section-subtitle" data-lang="en" style="">From a quick diagnostic to embedded leadership. Pick what fits your stage and budget.</p>
+            <p class="section-subtitle" data-lang="es" style="display: none;">Desde un diagnostico rapido hasta liderazgo integrado. Elige lo que encaje con tu etapa y presupuesto.</p>
+        </div>
+        <div class="services-grid">
+            <!-- TIER 1 -->
+            <div class="service-card fade-in visible">
+                <div class="service-badge" data-lang="en" style="">Seed / Early A</div>
+                <div class="service-badge" data-lang="es" style="display: none;">Seed / Serie A Temprana</div>
+                <h3 data-lang="en" style="">Ops Diagnostic &amp; Roadmap</h3>
+                <h3 data-lang="es" style="display: none;">Diagnostico Ops y Hoja de Ruta</h3>
+                <p data-lang="en" style="">Get clarity on what is broken and a prioritized plan to fix it.</p>
+                <p data-lang="es" style="display: none;">Obtiene claridad sobre que esta roto y un plan priorizado para arreglarlo.</p>
+                <div class="service-price" data-lang="en" style="">EUR 3,000-5,000 <span>/ 2-4 weeks</span></div>
+                <div class="service-price" data-lang="es" style="display: none;">EUR 3.000-5.000 <span>/ 2-4 semanas</span></div>
+                <ul>
+                    <li data-lang="en" style="">Full operational audit</li>
+                    <li data-lang="es" style="display: none;">Auditoria operativa completa</li>
+                    <li data-lang="en" style="">Gap analysis vs. stage benchmarks</li>
+                    <li data-lang="es" style="display: none;">Analisis de gaps vs. benchmarks de etapa</li>
+                    <li data-lang="en" style="">90-day prioritized roadmap</li>
+                    <li data-lang="es" style="display: none;">Hoja de ruta priorizada a 90 dias</li>
+                    <li data-lang="en" style="">1-hour founder debrief</li>
+                    <li data-lang="es" style="display: none;">Debrief de 1 hora con el fundador</li>
+                </ul>
+                <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#contact" class="btn-primary" data-lang="en" style="">Get Started</a>
+                <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#contact" class="btn-primary" data-lang="es" style="display: none;">Empezar</a>
+            </div>
+            <!-- TIER 2 -->
+            <div class="service-card featured fade-in visible">
+                <div class="service-badge" data-lang="en" style="">Most Popular</div>
+                <div class="service-badge" data-lang="es" style="display: none;">Mas Popular</div>
+                <h3 data-lang="en" style="">Scale-Up Operating System</h3>
+                <h3 data-lang="es" style="display: none;">Sistema Operativo Scale-Up</h3>
+                <p data-lang="en" style="">Build the complete operational foundation your startup needs to scale.</p>
+                <p data-lang="es" style="display: none;">Construye la base operativa completa que tu startup necesita para escalar.</p>
+                <div class="service-price" data-lang="en" style="">EUR 12,000-25,000 <span>/ 8-12 weeks</span></div>
+                <div class="service-price" data-lang="es" style="display: none;">EUR 12.000-25.000 <span>/ 8-12 semanas</span></div>
+                <ul>
+                    <li data-lang="en" style="">SOP library (Sales, Marketing, CS)</li>
+                    <li data-lang="es" style="display: none;">Biblioteca de SOPs (Ventas, Marketing, CS)</li>
+                    <li data-lang="en" style="">CRM setup + pipeline dashboards</li>
+                    <li data-lang="es" style="display: none;">Configuracion CRM + dashboards de pipeline</li>
+                    <li data-lang="en" style="">Revenue forecasting model</li>
+                    <li data-lang="es" style="display: none;">Modelo de prevision de ingresos</li>
+                    <li data-lang="en" style="">OKR framework + operating cadence</li>
+                    <li data-lang="es" style="display: none;">Framework de OKRs + cadencia operativa</li>
+                    <li data-lang="en" style="">Board pack + investor reporting</li>
+                    <li data-lang="es" style="display: none;">Board pack + reporting para inversores</li>
+                    <li data-lang="en" style="">2x weekly check-ins + Slack support</li>
+                    <li data-lang="es" style="display: none;">Check-ins 2x/semana + soporte Slack</li>
+                </ul>
+                <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#contact" class="btn-primary" data-lang="en" style="">Book a Call</a>
+                <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#contact" class="btn-primary" data-lang="es" style="display: none;">Reservar Llamada</a>
+            </div>
+            <!-- TIER 3 -->
+            <div class="service-card fade-in visible">
+                <div class="service-badge" data-lang="en" style="">Series A-B</div>
+                <div class="service-badge" data-lang="es" style="display: none;">Serie A-B</div>
+                <h3 data-lang="en" style="">Fractional COO</h3>
+                <h3 data-lang="es" style="display: none;">COO Fraccional</h3>
+                <p data-lang="en" style="">Senior operational leadership without the full-time cost.</p>
+                <p data-lang="es" style="display: none;">Liderazgo operativo senior sin el coste de tiempo completo.</p>
+                <div class="service-price" data-lang="en" style="">EUR 3,000-8,000 <span>/ month</span></div>
+                <div class="service-price" data-lang="es" style="display: none;">EUR 3.000-8.000 <span>/ mes</span></div>
+                <ul>
+                    <li data-lang="en" style="">1-3 days per week embedded</li>
+                    <li data-lang="es" style="display: none;">1-3 dias por semana integrado</li>
+                    <li data-lang="en" style="">All Scale-Up OS deliverables</li>
+                    <li data-lang="es" style="display: none;">Todos los entregables del Scale-Up OS</li>
+                    <li data-lang="en" style="">Leadership meetings + board prep</li>
+                    <li data-lang="es" style="display: none;">Reuniones de liderazgo + prep de board</li>
+                    <li data-lang="en" style="">Hire and onboard ops team</li>
+                    <li data-lang="es" style="display: none;">Contratacion y onboarding del equipo ops</li>
+                    <li data-lang="en" style="">Strategic planning for next round</li>
+                    <li data-lang="es" style="display: none;">Planificacion estrategica para la siguiente ronda</li>
+                </ul>
+                <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#contact" class="btn-primary" data-lang="en" style="">Let's Talk</a>
+                <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#contact" class="btn-primary" data-lang="es" style="display: none;">Hablemos</a>
+            </div>
+        </div>
+        <!-- CUSTOM / OUT OF SCOPE -->
+        <div class="custom-box fade-in visible">
+            <div class="custom-box-text">
+                <h3 data-lang="en" style="">Need something different?</h3>
+                <h3 data-lang="es" style="display: none;">Necesitas algo diferente?</h3>
+                <p data-lang="en" style="">Complex transformation, multi-team restructuring, or a scope that does not fit the packages above? I also design fully custom engagements tailored to your specific situation, timeline, and budget. Let's talk and I will propose options.</p>
+                <p data-lang="es" style="display: none;">Transformacion compleja, reestructuracion multi-equipo o un alcance que no encaja en los paquetes anteriores? Tambien diseho proyectos totalmente a medida adaptados a tu situacion, plazos y presupuesto. Hablemos y te propongo opciones.</p>
+            </div>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#contact" class="btn-primary" data-lang="en" style="">Request Custom Scope →</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#contact" class="btn-primary" data-lang="es" style="display: none;">Solicitar Proyecto a Medida →</a>
+        </div>
+    </div>
+</section>
 
-</body>
-</html>
+<!-- PROCESS -->
+<section class="process" id="process">
+    <div class="container">
+        <div class="section-header" style="text-align:center; max-width:600px; margin:0 auto 56px;">
+            <p class="section-label" data-lang="en" style="">How It Works</p>
+            <p class="section-label" data-lang="es" style="display: none;">Como Funciona</p>
+            <h2 class="section-title" style="max-width: 100%;" data-lang="en">From chaos to clarity in four steps</h2>
+            <h2 class="section-title" style="max-width: 100%; display: none;" data-lang="es">Del caos a la claridad en cuatro pasos</h2>
+        </div>
+        <div class="process-steps">
+            <div class="process-step fade-in visible">
+                <div class="step-num">1</div>
+                <h3 data-lang="en" style="">Discovery Call</h3>
+                <h3 data-lang="es" style="display: none;">Llamada de Descubrimiento</h3>
+                <p data-lang="en" style="">1-hour free call to understand your stage, pains, and goals.</p>
+                <p data-lang="es" style="display: none;">Llamada gratuita de 1 hora para entender tu etapa, dolores y objetivos.</p>
+            </div>
+            <div class="process-step fade-in visible">
+                <div class="step-num">2</div>
+                <h3 data-lang="en" style="">Ops Diagnostic</h3>
+                <h3 data-lang="es" style="display: none;">Diagnostico Ops</h3>
+                <p data-lang="en" style="">Deep dive into your processes, tools, metrics, and team structure.</p>
+                <p data-lang="es" style="display: none;">Inmersion profunda en tus procesos, herramientas, metricas y estructura de equipo.</p>
+            </div>
+            <div class="process-step fade-in visible">
+                <div class="step-num">3</div>
+                <h3 data-lang="en" style="">Build &amp; Implement</h3>
+                <h3 data-lang="es" style="display: none;">Construir e Implementar</h3>
+                <p data-lang="en" style="">Hands-on delivery: SOPs, dashboards, cadences, and frameworks installed.</p>
+                <p data-lang="es" style="display: none;">Entrega hands-on: SOPs, dashboards, cadencias y frameworks instalados.</p>
+            </div>
+            <div class="process-step fade-in visible">
+                <div class="step-num">4</div>
+                <h3 data-lang="en" style="">Optimize &amp; Transfer</h3>
+                <h3 data-lang="es" style="display: none;">Optimizar y Transferir</h3>
+                <p data-lang="en" style="">Iterate based on real data. Train your team. Hand over a running system.</p>
+                <p data-lang="es" style="display: none;">Iterar con datos reales. Formar a tu equipo. Entregar un sistema funcionando.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CASE STUDY -->
+<section id="results">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-label" data-lang="en" style="">Results</p>
+            <p class="section-label" data-lang="es" style="display: none;">Resultados</p>
+            <h2 class="section-title" data-lang="en" style="">Real impact, not theory</h2>
+            <h2 class="section-title" data-lang="es" style="display: none;">Impacto real, no teoria</h2>
+        </div>
+        <div class="case-study-card fade-in visible">
+            <div>
+                <h3 data-lang="en" style="">B2B AI SaaS -- Seed Stage</h3>
+                <h3 data-lang="es" style="display: none;">B2B AI SaaS -- Etapa Seed</h3>
+                <p data-lang="en" style="">A seed-stage AI startup with 8 people and around EUR 150K ARR had no operational processes. Everything ran through the founder. CRM was chaotic, invoicing was manual, and there was zero pipeline visibility.</p>
+                <p data-lang="es" style="display: none;">Una startup de IA en etapa seed con 8 personas y alrededor de EUR 150K ARR no tenia procesos operativos. Todo pasaba por el fundador. El CRM era caotico, la facturacion manual y no habia visibilidad de pipeline.</p>
+                <p data-lang="en" style="">Within 90 days, we installed a complete operating system: CRM structure, automated billing, SOPs for sales/marketing/CS, and a forecasting model the CEO now uses for board reporting.</p>
+                <p data-lang="es" style="display: none;">En 90 dias, instalamos un sistema operativo completo: estructura de CRM, facturacion automatizada, SOPs para ventas/marketing/CS, y un modelo de forecasting que el CEO ahora usa para reportar al board.</p>
+            </div>
+            <div class="case-metrics">
+                <div class="case-metric">
+                    <h4>80%</h4>
+                    <p data-lang="en" style="">Reduction in invoicing time</p>
+                    <p data-lang="es" style="display: none;">Reduccion en tiempo de facturacion</p>
+                </div>
+                <div class="case-metric">
+                    <h4>3x</h4>
+                    <p data-lang="en" style="">Pipeline visibility improvement</p>
+                    <p data-lang="es" style="display: none;">Mejora en visibilidad de pipeline</p>
+                </div>
+                <div class="case-metric">
+                    <h4>12</h4>
+                    <p data-lang="en" style="">SOPs created and adopted</p>
+                    <p data-lang="es" style="display: none;">SOPs creados y adoptados</p>
+                </div>
+                <div class="case-metric">
+                    <h4>90</h4>
+                    <p data-lang="en" style="">Days to full operating system</p>
+                    <p data-lang="es" style="display: none;">Dias hasta sistema operativo completo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-photo">[Your Photo Here]</div>
+            <div class="about-content">
+                <p class="section-label" data-lang="en" style="">About</p>
+                <p class="section-label" data-lang="es" style="display: none;">Sobre Mi</p>
+                <h3 data-lang="en" style="">I have been in your shoes. I built the ops engine from zero.</h3>
+                <h3 data-lang="es" style="display: none;">He estado en tu lugar. Construi el motor operativo desde cero.</h3>
+                <p data-lang="en" style="">As the first operations hire at a seed-stage AI startup, I know what it feels like to join a company where nothing is documented, the CRM is a mess, and the founder is the single point of failure for every decision.</p>
+                <p data-lang="es" style="display: none;">Como la primera contratacion de operaciones en una startup de IA en etapa seed, se lo que se siente al unirse a una empresa donde nada esta documentado, el CRM es un desastre y el fundador es el unico punto de fallo para cada decision.</p>
+                <p data-lang="en" style="">I built CRM visibility from scratch, defined SOPs for sales, marketing and customer success, integrated billing systems, and created the forecasting model the company now uses for investor reporting. I saw firsthand how the right operational foundation transforms a startup from firefighting mode to confident execution.</p>
+                <p data-lang="es" style="display: none;">Construi visibilidad de CRM desde cero, defini SOPs para ventas, marketing y customer success, integre sistemas de facturacion, y cree el modelo de forecasting que la empresa ahora usa para reportar a inversores. Vi de primera mano como la base operativa correcta transforma una startup del modo apaga-fuegos a ejecucion con confianza.</p>
+                <p data-lang="en" style="">Now I help other founders do the same -- faster, with proven frameworks, and without the cost of a full-time C-level hire.</p>
+                <p data-lang="es" style="display: none;">Ahora ayudo a otros fundadores a hacer lo mismo -- mas rapido, con frameworks probados, y sin el coste de una contratacion C-level a tiempo completo.</p>
+                <div class="about-tags">
+                    <span class="about-tag">B2B SaaS</span>
+                    <span class="about-tag">Revenue Operations</span>
+                    <span class="about-tag">CRM &amp; Metrics</span>
+                    <span class="about-tag">SOPs &amp; Process Design</span>
+                    <span class="about-tag">Fundraising Readiness</span>
+                    <span class="about-tag">AI / HealthTech / FinTech</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+    <div class="container">
+        <div class="section-header" style="text-align:center; max-width:600px; margin:0 auto 56px;">
+            <p class="section-label">FAQ</p>
+            <h2 class="section-title" style="max-width: 100%;" data-lang="en">Common questions</h2>
+            <h2 class="section-title" style="max-width: 100%; display: none;" data-lang="es">Preguntas frecuentes</h2>
+        </div>
+        <div class="faq-grid">
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+                <button class="faq-q" data-lang="en" style="">How is this different from hiring a full-time COO?</button>
+                <button class="faq-q" data-lang="es" style="display: none;">En que se diferencia esto de contratar un COO a tiempo completo?</button>
+                <div class="faq-a">
+                    <p data-lang="en" style="">You get the same level of ownership and decision-making as a COO, but without a EUR 100K+ salary, equity package, or a 3 to 6 month hiring process. I join for 1 to 3 days per week, take responsibility for processes, metrics, and governance, and then help you build or hire the internal team that will run the system long term. When your company is ready for a full-time hire, you already have a working operating system in place instead of starting from scratch.</p>
+                    <p data-lang="es" style="display: none;">Obtienes el mismo nivel de responsabilidad y toma de decisiones que un COO, pero sin un salario de mas de EUR 100K, paquete de equity ni un proceso de contratacion de 3 a 6 meses. Me integro 1 a 3 dias por semana, me responsabilizo de procesos, metricas y governance, y luego te ayudo a construir o contratar el equipo interno que mantendra el sistema a largo plazo. Cuando tu empresa este lista para una contratacion a tiempo completo, ya tendras un sistema operativo funcionando en lugar de empezar de cero.</p>
+                </div>
+            </div>
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+                <button class="faq-q" data-lang="en" style="">What stages and industries do you work with?</button>
+                <button class="faq-q" data-lang="es" style="display: none;">Con que etapas e industrias trabajas?</button>
+                <div class="faq-a">
+                    <p data-lang="en" style="">I focus on Seed to Series B startups in B2B SaaS, AI/ML, HealthTech, and FinTech. The common pattern is: you have a product, some revenue, and funding, but no real operating system. If your team is between 5 and 80 people and you feel that growth is outpacing your internal processes, we are likely a strong fit. If you are still pre-product or running a bootstrapped lifestyle business, I am probably not the right partner.</p>
+                    <p data-lang="es" style="display: none;">Me centro en startups de Seed a Serie B en B2B SaaS, AI/ML, HealthTech y FinTech. El patron comun es: tienes producto, algo de ingresos y financiacion, pero sin un sistema operativo real. Si tu equipo tiene entre 5 y 80 personas y sientes que el crecimiento va mas rapido que tus procesos internos, probablemente encajamos bien. Si estas aun pre-producto o gestionas un negocio bootstrapped de estilo de vida, probablemente no sea el partner adecuado.</p>
+                </div>
+            </div>
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+                <button class="faq-q" data-lang="en" style="">Do you work remotely?</button>
+                <button class="faq-q" data-lang="es" style="display: none;">Trabajas en remoto?</button>
+                <div class="faq-a">
+                    <p data-lang="en" style="">Yes. Most engagements are fully remote with async communication and clear cadences. I set up a shared workspace (Notion, Slack/Teams, dashboards) so your team always knows what is happening and nothing gets lost. We hold structured check-ins 2x per week plus a monthly strategy review. For Madrid-based clients, I am happy to mix in on-site working sessions when it adds value -- especially during the diagnostic and kickoff phases.</p>
+                    <p data-lang="es" style="display: none;">Si. La mayoria de los proyectos son totalmente en remoto con comunicacion asincrona y cadencias claras. Configuro un espacio compartido (Notion, Slack/Teams, dashboards) para que tu equipo sepa siempre que esta pasando y nada se pierda. Hacemos check-ins estructurados 2x por semana mas una revision estrategica mensual. Para clientes en Madrid, puedo combinar sesiones presenciales cuando aporte valor -- especialmente durante las fases de diagnostico y kickoff.</p>
+                </div>
+            </div>
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+                <button class="faq-q" data-lang="en" style="">What does the free Ops Diagnostic include?</button>
+                <button class="faq-q" data-lang="es" style="display: none;">Que incluye el Diagnostico Ops gratuito?</button>
+                <div class="faq-a">
+                    <p data-lang="en" style="">Before we work together, we map your funnel, processes, tools, and reporting in a focused 1-hour call. You leave with a simple 1-page view of your current operational maturity and the top 3 actions that would make the biggest difference right now. There is no commitment, no sales pitch -- just a clear-eyed assessment. If it makes sense for both sides, we then talk about the right package or a custom scope.</p>
+                    <p data-lang="es" style="display: none;">Antes de trabajar juntos, mapeamos tu funnel, procesos, herramientas y reporting en una llamada enfocada de 1 hora. Sales con una vista simple de una pagina sobre tu madurez operativa actual y las 3 acciones que mas impacto tendrian ahora mismo. Sin compromiso, sin pitch de ventas -- solo una evaluacion honesta. Si tiene sentido para ambas partes, despues hablamos del paquete adecuado o de un alcance a medida.</p>
+                </div>
+            </div>
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+                <button class="faq-q" data-lang="en" style="">How quickly can we start?</button>
+                <button class="faq-q" data-lang="es" style="display: none;">Que tan rapido podemos empezar?</button>
+                <div class="faq-a">
+                    <p data-lang="en" style="">Once we agree on scope, we can usually kick off within 1 week. There is no long onboarding or procurement process. We align on deliverables, sign a simple agreement, and get to work. For most projects, the first 10 days are dedicated to the Ops Diagnostic and quick wins, so you start seeing tangible changes from week one instead of waiting months for a big reveal.</p>
+                    <p data-lang="es" style="display: none;">Una vez que acordamos el alcance, normalmente podemos arrancar en 1 semana. No hay largo proceso de onboarding o procurement. Alineamos entregables, firmamos un acuerdo simple y nos ponemos a trabajar. En la mayoria de los proyectos, los primeros 10 dias se dedican al Diagnostico Ops y a quick wins, asi que empiezas a ver cambios tangibles desde la primera semana en lugar de esperar meses a una gran revelacion.</p>
+                </div>
+            </div>
+            <!-- FAQ 6 -->
+            <div class="faq-item">
+                <button class="faq-q" data-lang="en" style="">Can you scope custom or out-of-scope projects?</button>
+                <button class="faq-q" data-lang="es" style="display: none;">Puedes disehar proyectos a medida o fuera de alcance?</button>
+                <div class="faq-a">
+                    <p data-lang="en" style="">Absolutely. The three packages cover the most common needs, but every startup is different. If you need a broader transformation, multi-team restructuring, a specific operational area (finance ops, HR ops, supply chain), or a combination of services, I will design a custom engagement with clear deliverables, timeline, and pricing. Just book a call and we will scope it together.</p>
+                    <p data-lang="es" style="display: none;">Por supuesto. Los tres paquetes cubren las necesidades mas comunes, pero cada startup es diferente. Si necesitas una transformacion mas amplia, reestructuracion multi-equipo, un area operativa especifica (finance ops, HR ops, supply chain), o una combinacion de servicios, diseho un proyecto a medida con entregables claros, plazos y precios. Solo reserva una llamada y lo definimos juntos.</p>
+                </div>
+            </div>
+            <!-- FAQ 7 -->
+            <div class="faq-item">
+                <button class="faq-q" data-lang="en" style="">What tools and platforms do you work with?</button>
+                <button class="faq-q" data-lang="es" style="display: none;">Con que herramientas y plataformas trabajas?</button>
+                <div class="faq-a">
+                    <p data-lang="en" style="">I am tool-agnostic and adapt to your existing stack. Common tools I work with include HubSpot, Salesforce, Pipedrive (CRM), Notion, Confluence (documentation), Stripe, Chargebee (billing), Google Sheets, Looker, Metabase (dashboards and reporting), and Slack or Teams for communication. If you need to migrate or implement a new tool, I can manage the full setup and team training.</p>
+                    <p data-lang="es" style="display: none;">Soy agnostico en herramientas y me adapto a tu stack existente. Herramientas comunes con las que trabajo incluyen HubSpot, Salesforce, Pipedrive (CRM), Notion, Confluence (documentacion), Stripe, Chargebee (facturacion), Google Sheets, Looker, Metabase (dashboards y reporting), y Slack o Teams para comunicacion. Si necesitas migrar o implementar una nueva herramienta, puedo gestionar toda la configuracion y formacion del equipo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+    <div class="container" style="max-width:700px;">
+        <h2 data-lang="en" style="">Ready to build your operating system?</h2>
+        <h2 data-lang="es" style="display: none;">Listo para construir tu sistema operativo?</h2>
+        <p data-lang="en" style="">Book a free 1-hour Ops Diagnostic. No commitment, no slide decks -- just a clear picture of where you are and what to fix first.</p>
+        <p data-lang="es" style="display: none;">Reserva un Diagnostico Ops gratuito de 1 hora. Sin compromiso, sin presentaciones -- solo una imagen clara de donde estas y que arreglar primero.</p>
+        <a href="https://calendly.com/YOUR-LINK" class="btn-primary" data-lang="en" style="">Book Your Free Call →</a>
+        <a href="https://calendly.com/YOUR-LINK" class="btn-primary" data-lang="es" style="display: none;">Reserva Tu Llamada Gratis →</a>
+        <p style="margin-top: 24px; font-size: 0.85rem; color: rgb(100, 116, 139);" data-lang="en">Or email me at hello@scaleops.co</p>
+        <p style="margin-top: 24px; font-size: 0.85rem; color: rgb(100, 116, 139); display: none;" data-lang="es">O escribeme a hello@scaleops.co</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#" class="logo"><img src="./ScaleOps - Operations &amp; Strategy for Startups_files/419bc9bf-cf9b-4cc5-9f47-84f5309b2961.png" alt="ScaleOps" class="nav-logo-img"></a>
+        <div class="footer-links">
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#services" data-lang="en" style="">Services</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#services" data-lang="es" style="display: none;">Servicios</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#about" data-lang="en" style="">About</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#about" data-lang="es" style="display: none;">Sobre mi</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#contact" data-lang="en" style="">Contact</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#contact" data-lang="es" style="display: none;">Contacto</a>
+            <a href="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/89f59a24b7261c7854b878e5fcb65706/3108ce5b-8160-43f4-acaa-77505737b5c8/0a63c855.html?AWSAccessKeyId=ASIA2F3EMEYEUAEPCCR3&amp;Signature=LXTRHub8rs%2F2O9G6JaL5foaeIm0%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEAUaCXVzLWVhc3QtMSJHMEUCIQCvuee6TT3N8DK%2FLz3Dj4H1bUfQ4Kl92%2BwOnV4UK4olWQIgGglfncmqeDshjNzOxhc%2F%2FQQsLZWjpCJma1Djg8Wof%2Bsq%2FAQIzv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2OTk3NTMzMDk3MDUiDG1nneWa%2F%2FkX9RZfOSrQBJi1iEJkT6vlAVfE7rkroQAfsvHTFEOf0Ikl6u%2Bhi4qSXsfbWPo6S6KV0HhWzi2kk25vp1jJ7e%2BblED8G%2FSsmwwZNvh4nhSOL0e%2FVA0cMsHd1taALvCjcT8gyLsrCoE%2FrkIiEW9kSvK3vlwiyETPaUBeO028fNj5iZ3b7%2F%2FWTXJZgZTDMvdbeP6Euh3LTn7C8%2F%2BwVb5fO49gsPmgz7kRWhQGd26g2jYvYQw8f04FL6fidd4pyMrrqYLpmXuWdWqnA2hYbfAFWdrTVb0%2Bnqq1MRHjSt5z%2Bpo%2BTkMLgbUeERcNc4K%2FgQCXBjekyfLTdg%2FYvnIRCP2YGhFggnDt0vEYYd4sJn6cXFMVTervR2xqLeDMR6Z%2BIXxQBSF1OlrdYn0M1vuRJ5QocCSKN9lGfjoWJfwUFnImBBOnWSsfaiP%2BFXGQcHZnwc8Oa1za8glZmRhzy26aVpBthx42azj%2BpIvyRKVEcnSumPsriMbFWErjhWDM%2F4WMDnD5bmH2HkR6iq7yQAvQrhKcgSHOGo5Xaixlm6Yv1YiOFP40tq7Z%2FvjnQUWx975EJHQ58X6aBgW0DBFCPy01VfEKJshh00npJPBI54WSdNpYFF6L0NZnM7JlfszLZt2pr117ZAacLlU3tR5yXQ7lOccuklqEo%2F5gVxafadnUFziGQIra3bZablP%2F8dHplsWA0H9FfgZ1H%2Bq0LtHBrkPkiCGmWY5e1tjVlfUnwp8w9tr8OR4rxNkK4%2Fl2mbGMptcFYYnWDfFaII4uZ7p%2FKXGn6n%2F4PmU%2Bz7SrsVRNSm4wgu6lzQY6mAHv0JnMfei5%2FURS1FH%2BcP26Yxga%2FvdtdEepbTpkS7cltm1ipAwnXzZM1Fxpe3%2BV0ymzd58KQB0iY1dEJKHsqLip7LRWmBjvdyVOhRFzVxY7ZNWRgdQOFt0ZqwC7OfbMqKNU27fIXP9wVE6BLGYfyu%2B2gWSjhQ0lyCbWLcVe3i91ITb6bXhjMyhZmG81ECkwuzmI417qnKOI8Q%3D%3D&amp;Expires=1772718302&amp;utm_source=perplexity#">LinkedIn</a>
+        </div>
+        <p class="footer-copy">2026 ScaleOps. Madrid, Spain.</p>
+    </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+function switchLang(lang) {
+    var other = (lang === 'en') ? 'es' : 'en';
+    var els = document.querySelectorAll('[data-lang]');
+    for (var i = 0; i < els.length; i++) {
+        var val = els[i].getAttribute('data-lang');
+        if (val === lang) {
+            els[i].style.display = '';
+        } else if (val === other) {
+            els[i].style.display = 'none';
+        }
+    }
+    var btns = document.querySelectorAll('.lang-btn');
+    for (var j = 0; j < btns.length; j++) {
+        if (btns[j].textContent.trim() === lang.toUpperCase()) {
+            btns[j].classList.add('active');
+        } else {
+            btns[j].classList.remove('active');
+        }
+    }
+    document.documentElement.lang = lang;
+}
+
+// FAQ Toggle
+var faqBtns = document.querySelectorAll('.faq-q');
+for (var k = 0; k < faqBtns.length; k++) {
+    faqBtns[k].addEventListener('click', function() {
+        var isOpen = this.classList.contains('active');
+        // close all in same language
+        var allQ = document.querySelectorAll('.faq-q');
+        for (var m = 0; m < allQ.length; m++) {
+            allQ[m].classList.remove('active');
+            var ans = allQ[m].parentElement.querySelector('.faq-a');
+            if (ans) ans.style.maxHeight = null;
+        }
+        if (!isOpen) {
+            this.classList.add('active');
+            var answer = this.parentElement.querySelector('.faq-a');
+            if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+    });
+}
+
+// Scroll Animation
+var observer = new IntersectionObserver(function(entries) {
+    for (var n = 0; n < entries.length; n++) {
+        if (entries[n].isIntersecting) {
+            entries[n].target.classList.add('visible');
+        }
+    }
+}, { threshold: 0.1 });
+
+var fadeEls = document.querySelectorAll('.fade-in');
+for (var p = 0; p < fadeEls.length; p++) {
+    observer.observe(fadeEls[p]);
+}
+
+// Init
+switchLang('en');
+</script>
+
+
+</body></html>
